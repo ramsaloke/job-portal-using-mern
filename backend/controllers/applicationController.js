@@ -46,7 +46,7 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
           new ErrorHandler("Failed to upload resume to cloudinary.", 500)
         );
       }
-      jobSeekerInfo.resume = {
+      jobSeekerinfo.resume = {
         public_id: cloudinaryResponse.public_id,
         url: cloudinaryResponse.secure_url,
       };
@@ -62,7 +62,7 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
       url: req.user && req.user.resume.url,
     };
   }
-  const employerInfo = {
+  const employerinfo = {
     id: jobDetails.postedBy,
     role: "Employer",
   };
